@@ -2,6 +2,7 @@ package example.micronaut.genre;
 
 import example.micronaut.ListingArguments;
 import example.micronaut.domain.Genre;
+import io.micronaut.spring.tx.annotation.Transactional;
 import io.micronaut.validation.Validated;
 
 import javax.inject.Singleton;
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 @Singleton // <1>
 @Validated
+@Transactional
 public class GenreRepositoryImpl implements GenreRepository {
 
     private final GenreMapper genreMapper;
@@ -64,4 +66,5 @@ public class GenreRepositoryImpl implements GenreRepository {
         genreMapper.update(id, name);
         return -1;
     }
+
 }

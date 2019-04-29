@@ -43,7 +43,8 @@ dependencies {
     compile "io.micronaut:micronaut-http-server-netty"
 
     //tag::mybatis[]
-    compile 'org.mybatis:mybatis:3.4.6' // <1>
+    compile "org.mybatis:mybatis:3.5.1" // <1>
+    compile "org.mybatis:mybatis-spring:2.0.1"
     compile "io.micronaut.configuration:micronaut-jdbc-hikari" // <2>
     runtime "com.h2database:h2:1.4.196" // <3>
     //end::mybatis[]
@@ -57,6 +58,10 @@ dependencies {
     testCompile "org.junit.jupiter:junit-jupiter-api"
     testCompile "io.micronaut.test:micronaut-test-junit5"
     testRuntime "org.junit.jupiter:junit-jupiter-engine"
+
+    compile "io.micronaut:micronaut-spring"
+    compile "org.springframework:spring-jdbc"
+
 }
 
 shadowJar {
